@@ -6,7 +6,7 @@ def sqrt(number, convergence_value=1e-6, max_iterations=100):
         return 0
     elif number < 0:
         print("Please enter a valid number for square root calculation")
-        return
+        return None
 
     s = number / 2
 
@@ -25,7 +25,8 @@ def sqrt(number, convergence_value=1e-6, max_iterations=100):
 
 """Factorial Function"""
 def fact(number):
-
+    if number < 0:
+        return None
     if number == 1 or number == 0:
         return 1
     return number * fact(number-1)
