@@ -1,0 +1,18 @@
+Compiling program...
+rm -f *.o main.exe
+gcc -Wall -O3 -std=c99 -fopenmp main.c -o main.exe -lgomp -lm
+Running with 1 threads
+Outputs saved to thread_outputs/threads_1/
+
+Running with 2 threads
+Outputs saved to thread_outputs/threads_2/
+
+Running with 4 threads
+Outputs saved to thread_outputs/threads_4/
+
+Running with 8 threads
+Outputs saved to thread_outputs/threads_8/
+
+Running with 16 threads
+Outputs saved to thread_outputs/threads_16/
+

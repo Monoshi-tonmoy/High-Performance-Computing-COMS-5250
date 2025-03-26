@@ -1,0 +1,8 @@
+First 5 elements of u:
+u[0] = 2.236620
+u[1] = 2.201225
+u[2] = 13.457628
+u[3] = 1.811259
+u[4] = 1.094672
+
+Computation with 8 threads for N=500, K=50 took 0.000239 seconds

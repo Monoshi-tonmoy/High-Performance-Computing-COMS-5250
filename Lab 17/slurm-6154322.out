@@ -1,0 +1,53 @@
+Compiling program...
+rm -f *.o main.exe
+gcc -Wall -O3 -std=c99 -fopenmp main.c -o main.exe -lgomp -lm
+Running with 1 threads
+First 5 elements of u:
+u[0] = 38.093757
+u[1] = 2.256072
+u[2] = 1.084376
+u[3] = 1.211890
+u[4] = 3.209901
+
+Computation with 1 threads for N=500, K=50 took 0.000020 seconds
+
+Running with 2 threads
+First 5 elements of u:
+u[0] = 38.093757
+u[1] = 2.256072
+u[2] = 1.084376
+u[3] = 1.211890
+u[4] = 3.209901
+
+Computation with 2 threads for N=500, K=50 took 0.000129 seconds
+
+Running with 4 threads
+First 5 elements of u:
+u[0] = 38.093757
+u[1] = 2.256072
+u[2] = 1.084376
+u[3] = 1.211890
+u[4] = 3.209901
+
+Computation with 4 threads for N=500, K=50 took 0.000144 seconds
+
+Running with 8 threads
+First 5 elements of u:
+u[0] = 38.093757
+u[1] = 2.256072
+u[2] = 1.084376
+u[3] = 1.211890
+u[4] = 3.209901
+
+Computation with 8 threads for N=500, K=50 took 0.000252 seconds
+
+Running with 16 threads
+First 5 elements of u:
+u[0] = 38.093757
+u[1] = 2.256072
+u[2] = 1.084376
+u[3] = 1.211890
+u[4] = 3.209901
+
+Computation with 16 threads for N=500, K=50 took 0.000264 seconds
+
