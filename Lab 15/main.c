@@ -1,66 +1,55 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
-#include <assert.h>
 #include "matrix.h"
 #include "trimatrix.h"
 
-// Function to generate a lower triangular matrix L
-matrix generate_L(int N) {
-    matrix L = new_matrix(N, N);
-    for (int i = 1; i <= N; i++) {
-        for (int j = 1; j <= i; j++) {
-            mget(L, i, j) = (double)(i + j); // Example values
-        }
-    }
-    return L;
-}
-
-// Function to compute A = LL^T
-matrix compute_A(matrix* L) {
-    int N = L->rows;
-    matrix A = new_matrix(N, N);
-    for (int i = 1; i <= N; i++) {
-        for (int j = 1; j <= N; j++) {
-            double sum = 0.0;
-            for (int k = 1; k <= N; k++) {
-                sum += mgetp(L, i, k) * mgetp(L, j, k);
-            }
-            mget(A, i, j) = sum;
-        }
-    }
-    return A;
-}
+// Function prototypes
+void Hessenberg(const matrix* Ain, trimatrix* T); 
+void QRA(trimatrix* T);
 
 int main() {
-    int N = 6;
+    // Step 1: Define matrix size N = 6
+    const int N = 6;
 
-    // Generate L and A = LL^T
-    matrix L = generate_L(N);
-    matrix A = compute_A(&L);
+    // Step 2: Generate a random symmetric positive definite matrix A = L * L^T
+    matrix L = new_matrix(N, N);
+    matrix A = new_matrix(N, N);
 
-    // Print matrix A
-    printf("Matrix A (A = LL^T):\n");
-    print_matrix(&A);
+    // Fill L with random values
+    int seed = 39;
+    srand(seed);
 
-    // Phase 1: Convert A to Hessenberg form
+    for (int i = 1; i <= N; i++) {
+        for (int j = 1; j <= i; j++) {  // Only fill lower triangle
+            mget(L, i, j) = ((i * j + seed) % 10 + 1);  
+        }
+    }
+
+    // Compute A = L * L^T
+    A = matrix_mult(&L, &L);
+
+    // Print the original matrix A
+    printf("Original Matrix A (6x6):\n");
+    print_matrix(&A);  
+
+    // Step 3: Convert A to Tridiagonal Form (Phase 1)
     trimatrix T = new_trimatrix(N);
     Hessenberg(&A, &T);
 
-    // Print Hessenberg matrix T
-    printf("Hessenberg matrix T (Phase 1):\n");
-    print_trimatrix(&T);
+    // Print the tridiagonal matrix
+    printf("Tridiagonal Matrix (Phase 1 Result):\n");
+    print_trimatrix(&T); 
 
-    // Phase 2: Apply QR algorithm to find eigenvalues
+    // Step 4: Apply QR Algorithm to get eigenvalues (Phase 2)
     QRA(&T);
 
-    // Print eigenvalues (diagonal of T after QR algorithm)
-    printf("Eigenvalues (Phase 2):\n");
+    // Print the final eigenvalues
+    printf("Eigenvalues (Phase 2 Result):\n");
     for (int i = 1; i <= N; i++) {
-        printf("%13.6e\n", tget(&T, i, i));
+        printf("Eigenvalue %d: %.6f\n", i, tget(&T, i, i));
     }
 
-    // Clean up
     delete_matrix(&L);
     delete_matrix(&A);
     delete_trimatrix(&T);

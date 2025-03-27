@@ -1,0 +1,44 @@
+Compiling program...
+rm -f simpson.exe
+gcc -Wall -O3 -std=c99 -fopenmp simpson.c -o simpson.exe -lgomp -lm
+Running with 1 threads
+Results for 1 threads:
+N = 16777216, Threads = 1
+Serial:     T =   2.718281828458828e+00, err =  2.16716e-13
+Critical:   T =   2.718281532956352e+00, err =  2.95503e-07, time =  1.09288e-01
+Reduction:  T =   2.718281828458829e+00, err =  2.16271e-13, time =  1.10786e-01
+
+
+Running with 2 threads
+Results for 2 threads:
+N = 16777216, Threads = 2
+Serial:     T =   2.718281828458828e+00, err =  2.16716e-13
+Critical:   T =   2.718281427705675e+00, err =  4.00753e-07, time =  5.00758e-02
+Reduction:  T =   2.718281828458879e+00, err =  1.66533e-13, time =  4.95328e-02
+
+
+Running with 4 threads
+Results for 4 threads:
+N = 16777216, Threads = 4
+Serial:     T =   2.718281828458828e+00, err =  2.16716e-13
+Critical:   T =   2.718281213088283e+00, err =  6.15371e-07, time =  2.51071e-02
+Reduction:  T =   2.718281828458956e+00, err =  8.92619e-14, time =  2.47699e-02
+
+
+Running with 8 threads
+Results for 8 threads:
+N = 16777216, Threads = 8
+Serial:     T =   2.718281828458828e+00, err =  2.16716e-13
+Critical:   T =   2.718280781738975e+00, err =  1.04672e-06, time =  1.27314e-02
+Reduction:  T =   2.718281828458970e+00, err =  7.50511e-14, time =  1.23899e-02
+
+
+Running with 16 threads
+Results for 16 threads:
+N = 16777216, Threads = 16
+Serial:     T =   2.718281828458828e+00, err =  2.16716e-13
+Critical:   T =   2.718279917975980e+00, err =  1.91048e-06, time =  6.80077e-03
+Reduction:  T =   2.718281828459041e+00, err =  3.99680e-15, time =  6.39123e-03
+
+
+All runs completed. Outputs saved as output_[threads].txt
