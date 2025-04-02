@@ -1,0 +1,12 @@
+
+=== 2-NORM NORMALIZATION ===
+Fine-grain time: 0.011542 seconds
+Verified 2-norm after normalization: 1.000000
+Coarse-grain time: 0.010284 seconds
+Verified 2-norm after normalization: 1.000000
+
+=== MAX-NORM NORMALIZATION ===
+Fine-grain time: 0.006536 seconds
+Verified max-norm after normalization: 1.000000
+Coarse-grain time: 0.009690 seconds
+Verified max-norm after normalization: 1.000000

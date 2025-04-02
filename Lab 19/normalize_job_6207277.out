@@ -1,0 +1,69 @@
+Compiling program...
+rm -f normalize.exe
+gcc -Wall -O3 -std=c99 -fopenmp normalize.c -o normalize.exe -lgomp -lm
+Running with 1 threads
+Results for 1 threads:
+Fine-grain time: 0.071931 seconds
+Verified 2-norm after normalization: 1.000000
+Coarse-grain time: 0.075220 seconds
+Verified 2-norm after normalization: 1.000000
+
+=== MAX-NORM NORMALIZATION ===
+Fine-grain time: 0.065130 seconds
+Verified max-norm after normalization: 1.000000
+Coarse-grain time: 0.072459 seconds
+Verified max-norm after normalization: 1.000000
+
+Running with 2 threads
+Results for 2 threads:
+Fine-grain time: 0.031541 seconds
+Verified 2-norm after normalization: 1.000000
+Coarse-grain time: 0.034062 seconds
+Verified 2-norm after normalization: 1.000000
+
+=== MAX-NORM NORMALIZATION ===
+Fine-grain time: 0.035569 seconds
+Verified max-norm after normalization: 1.000000
+Coarse-grain time: 0.037154 seconds
+Verified max-norm after normalization: 1.000000
+
+Running with 4 threads
+Results for 4 threads:
+Fine-grain time: 0.015220 seconds
+Verified 2-norm after normalization: 1.000000
+Coarse-grain time: 0.015434 seconds
+Verified 2-norm after normalization: 1.000000
+
+=== MAX-NORM NORMALIZATION ===
+Fine-grain time: 0.011962 seconds
+Verified max-norm after normalization: 1.000000
+Coarse-grain time: 0.017411 seconds
+Verified max-norm after normalization: 1.000000
+
+Running with 8 threads
+Results for 8 threads:
+Fine-grain time: 0.011542 seconds
+Verified 2-norm after normalization: 1.000000
+Coarse-grain time: 0.010284 seconds
+Verified 2-norm after normalization: 1.000000
+
+=== MAX-NORM NORMALIZATION ===
+Fine-grain time: 0.006536 seconds
+Verified max-norm after normalization: 1.000000
+Coarse-grain time: 0.009690 seconds
+Verified max-norm after normalization: 1.000000
+
+Running with 16 threads
+Results for 16 threads:
+Fine-grain time: 0.008542 seconds
+Verified 2-norm after normalization: 1.000000
+Coarse-grain time: 0.007204 seconds
+Verified 2-norm after normalization: 1.000000
+
+=== MAX-NORM NORMALIZATION ===
+Fine-grain time: 0.008630 seconds
+Verified max-norm after normalization: 1.000000
+Coarse-grain time: 0.006652 seconds
+Verified max-norm after normalization: 1.000000
+
+All runs completed. Outputs saved as output_[threads].txt
