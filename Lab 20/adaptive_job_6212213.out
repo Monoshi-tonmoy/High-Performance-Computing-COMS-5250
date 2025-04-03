@@ -1,0 +1,64 @@
+Compiling program...
+rm -f adaptive.exe
+gcc -Wall -O3 -std=c99 -fopenmp adaptive.c -o adaptive.exe -lgomp -lm
+Running with 1 threads and TOL=1e-4
+Completed in 0 seconds
+
+Running with 1 threads and TOL=1e-5
+Completed in 0 seconds
+
+Running with 1 threads and TOL=1e-6
+Completed in 0 seconds
+
+Running with 1 threads and TOL=1e-7
+Completed in 0 seconds
+
+Running with 2 threads and TOL=1e-4
+Completed in 0 seconds
+
+Running with 2 threads and TOL=1e-5
+Completed in 0 seconds
+
+Running with 2 threads and TOL=1e-6
+Completed in 0 seconds
+
+Running with 2 threads and TOL=1e-7
+Completed in 0 seconds
+
+Running with 4 threads and TOL=1e-4
+Completed in 0 seconds
+
+Running with 4 threads and TOL=1e-5
+Completed in 0 seconds
+
+Running with 4 threads and TOL=1e-6
+Completed in 0 seconds
+
+Running with 4 threads and TOL=1e-7
+Completed in 0 seconds
+
+Running with 8 threads and TOL=1e-4
+Completed in 0 seconds
+
+Running with 8 threads and TOL=1e-5
+Completed in 0 seconds
+
+Running with 8 threads and TOL=1e-6
+Completed in 0 seconds
+
+Running with 8 threads and TOL=1e-7
+Completed in 0 seconds
+
+Running with 16 threads and TOL=1e-4
+Completed in 0 seconds
+
+Running with 16 threads and TOL=1e-5
+Completed in 0 seconds
+
+Running with 16 threads and TOL=1e-6
+Completed in 0 seconds
+
+Running with 16 threads and TOL=1e-7
+Completed in 0 seconds
+
+All runs completed. Results saved in adaptive_results.csv
