@@ -1,0 +1,66 @@
+Removing compiler version 2022.2.1
+Use `module list` to view any remaining dependent modules.
+Removing compiler-rt version 2022.2.1
+Use `module list` to view any remaining dependent modules.
+Removing advisor version 2022.3.1
+Use `module list` to view any remaining dependent modules.
+Removing ccl version 2021.7.1
+Use `module list` to view any remaining dependent modules.
+Removing dal version 2021.7.1
+Use `module list` to view any remaining dependent modules.
+Removing debugger version 2021.7.1
+Use `module list` to view any remaining dependent modules.
+Removing dnnl version 2022.2.1
+Use `module list` to view any remaining dependent modules.
+Removing mkl version 2022.2.1
+Use `module list` to view any remaining dependent modules.
+Removing mpi version 2021.7.1
+Use `module list` to view any remaining dependent modules.
+Removing tbb version 2021.7.1
+Use `module list` to view any remaining dependent modules.
+Removing vtune version 2022.4.1
+Use `module list` to view any remaining dependent modules.
+Removing itac version 2021.7.1
+Use `module list` to view any remaining dependent modules.
+Removing inspector version 2022.3.1
+Use `module list` to view any remaining dependent modules.
+Removing dpl version 2021.7.2
+Use `module list` to view any remaining dependent modules.
+Removing oclfpga version 2022.2.1
+Use `module list` to view any remaining dependent modules.
+Compiling program...
+rm -f trap_mpi.exe *.o
+mpicc -O3 -Wall -std=c99 trap_mpi.c -o trap_mpi.exe -lm 
+Running with 1 processes...
+export TMOUT=5400
+export TMPDIR=/scratch/monoshi/6228190
+export PTMPDIR=/scratch/monoshi/6228190/ptmp
+Enter a, b, and N (N must be divisible by 1): NP =  1, N = 1000000, T =  1.7182818284591e+00
+Exact =  1.7182818284590e+00, Relative Error =  5.0139217725520e-14
+Elapsed time =  6.1335389036685e-03 seconds
+
+Running with 2 processes...
+export TMOUT=5400
+export TMPDIR=/scratch/monoshi/6228190
+export PTMPDIR=/scratch/monoshi/6228190/ptmp
+Enter a, b, and N (N must be divisible by 2): NP =  2, N = 1000000, T =  1.7182818284592e+00
+Exact =  1.7182818284590e+00, Relative Error =  1.0273370642213e-13
+Elapsed time =  3.0752092134207e-03 seconds
+
+Running with 4 processes...
+export TMOUT=5400
+export TMPDIR=/scratch/monoshi/6228190
+export PTMPDIR=/scratch/monoshi/6228190/ptmp
+Enter a, b, and N (N must be divisible by 4): NP =  4, N = 1000000, T =  1.7182818284592e+00
+Exact =  1.7182818284590e+00, Relative Error =  8.8906654111231e-14
+Elapsed time =  3.2478214707226e-03 seconds
+
+Running with 8 processes...
+export TMOUT=5400
+export TMPDIR=/scratch/monoshi/6228190
+export PTMPDIR=/scratch/monoshi/6228190/ptmp
+Enter a, b, and N (N must be divisible by 8): NP =  8, N = 1000000, T =  1.7182818284592e+00
+Exact =  1.7182818284590e+00, Relative Error =  8.6063708776279e-14
+Elapsed time =  3.0612569767982e-02 seconds
+
+All runs completed
